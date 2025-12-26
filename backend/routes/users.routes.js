@@ -5,6 +5,7 @@ const { ensureWebToken } = require('../middleware/auth.middleware');
 
 router.get('/me', ensureWebToken, userController.getMe);
 router.patch('/me', ensureWebToken, userController.updateMe);
+router.get('/:userId/statistics', ensureWebToken, userController.getUserStatistics);
 
 module.exports = router;
 
